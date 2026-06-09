@@ -23,6 +23,9 @@ ENV PHP_OPCACHE_ENABLE=1 \
 USER root
 WORKDIR /var/www/html
 
+# Filament needs ext-intl; ensure sqlite/gd are present too
+RUN install-php-extensions intl pdo_sqlite gd
+
 # Install PHP/composer dependencies (cached on lockfile change)
 COPY composer.json composer.lock ./
 RUN composer install \

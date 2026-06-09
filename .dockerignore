@@ -16,3 +16,7 @@ tests
 *.md
 cookies.txt
 acookies.txt
+
+rexec.py
+remote_cmd.sh
+*_payload.json

@@ -26,3 +26,8 @@ acookies.txt
 Homestead.json
 Homestead.yaml
 Thumbs.db
+
+# local deploy helpers (never commit — contain secrets)
+rexec.py
+remote_cmd.sh
+*_payload.json
