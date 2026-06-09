@@ -1,0 +1,86 @@
+@import 'tailwindcss';
+
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../storage/framework/views/*.php';
+@source '../**/*.blade.php';
+@source '../**/*.js';
+
+@theme {
+    /* PatiCare brand palette */
+    --color-paw-50: #effaf8;
+    --color-paw-100: #d6f2ed;
+    --color-paw-200: #aee5dc;
+    --color-paw-300: #79d2c5;
+    --color-paw-400: #46b9aa;
+    --color-paw-500: #2bb3a3;
+    --color-paw-600: #1f8f82;
+    --color-paw-700: #1c7269;
+    --color-paw-800: #1b5b55;
+    --color-paw-900: #1a4c47;
+
+    --color-peach-50: #fff4ef;
+    --color-peach-100: #ffe6d9;
+    --color-peach-200: #ffccb3;
+    --color-peach-300: #ffae8a;
+    --color-peach-400: #ff9a76;
+    --color-peach-500: #ff7a4d;
+    --color-peach-600: #f15a26;
+    --color-peach-700: #c8421a;
+
+    --color-cream-50: #fffdf8;
+    --color-cream-100: #fdf8ee;
+    --color-cream-200: #f7eeda;
+
+    --font-display: 'Baloo 2', 'Quicksand', ui-rounded, ui-sans-serif, system-ui, sans-serif;
+    --font-sans: 'Nunito', ui-sans-serif, system-ui, sans-serif;
+
+    --radius-card: 1.75rem;
+}
+
+@layer base {
+    html {
+        scroll-behavior: smooth;
+    }
+    body {
+        font-family: var(--font-sans);
+        background-color: var(--color-cream-50);
+        color: #344b48;
+    }
+    h1, h2, h3, h4, h5, .font-display {
+        font-family: var(--font-display);
+    }
+}
+
+@layer components {
+    .btn-primary {
+        @apply inline-flex items-center justify-center gap-2 rounded-full bg-paw-500 px-7 py-3.5 font-display text-base font-semibold text-white shadow-lg shadow-paw-500/30 transition hover:bg-paw-600 hover:-translate-y-0.5 focus:outline-none focus-visible:ring-4 focus-visible:ring-paw-300;
+    }
+    .btn-peach {
+        @apply inline-flex items-center justify-center gap-2 rounded-full bg-peach-400 px-7 py-3.5 font-display text-base font-semibold text-white shadow-lg shadow-peach-400/30 transition hover:bg-peach-500 hover:-translate-y-0.5 focus:outline-none focus-visible:ring-4 focus-visible:ring-peach-200;
+    }
+    .btn-ghost {
+        @apply inline-flex items-center justify-center gap-2 rounded-full border-2 border-paw-200 bg-white/70 px-7 py-3.5 font-display text-base font-semibold text-paw-700 transition hover:border-paw-400 hover:bg-white;
+    }
+    .card {
+        @apply rounded-[var(--radius-card)] bg-white shadow-xl shadow-paw-900/5 ring-1 ring-paw-900/5;
+    }
+    .section {
+        @apply mx-auto w-full max-w-7xl px-5 sm:px-8;
+    }
+    .eyebrow {
+        @apply inline-flex items-center gap-2 rounded-full bg-paw-100 px-4 py-1.5 font-display text-sm font-bold uppercase tracking-wide text-paw-700;
+    }
+    .input {
+        @apply w-full rounded-2xl border-2 border-paw-100 bg-cream-50 px-4 py-3 text-base text-slate-700 transition placeholder:text-slate-400 focus:border-paw-400 focus:bg-white focus:outline-none focus:ring-4 focus:ring-paw-100;
+    }
+    .label {
+        @apply mb-1.5 block font-display text-sm font-semibold text-slate-600;
+    }
+}
+
+@layer utilities {
+    .text-balance { text-wrap: balance; }
+    .blob {
+        border-radius: 42% 58% 62% 38% / 42% 45% 55% 58%;
+    }
+}
